@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReactStream - React Component Development Toolkit</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-gray-50 text-gray-800">
+<!-- Header -->
+<header class="bg-white shadow-sm">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+        <div class="flex items-center">
+            <img src="img/logo-reactstream1.svg" alt="ReactStream Logo" class="h-12 w-auto mr-4">
+            <!--            <span class="text-2xl font-bold text-indigo-600">ReactStream</span>-->
+        </div>
+        <nav class="hidden md:flex space-x-10">
+            <a href="#features" class="text-gray-600 hover:text-indigo-600 transition">Features</a>
+            <a href="#documentation" class="text-gray-600 hover:text-indigo-600 transition">Documentation</a>
+            <a href="#examples" class="text-gray-600 hover:text-indigo-600 transition">Examples</a>
+            <a href="#download" class="text-gray-600 hover:text-indigo-600 transition">Download</a>
+        </nav>
+        <div>
+            <a href="https://github.com/reactstream/cli"
+               class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700">
+                <i class="fab fa-github mr-2"></i> GitHub
+            </a>
+        </div>
+    </div>
+</header>
+
+<!-- Hero Section -->
+<section class="hero-pattern py-20 md:py-32">
+    <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
+                    Streamline Your React Development
+                </h1>
+
+                <p class="text-xl text-gray-300 mb-8">
+                    ReactStream is a comprehensive CLI toolkit that analyzes your components and helps you debug
+                    effectively—all in one seamless workflow.
+                </p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#download"
+                       class="inline-flex justify-center items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:text-lg">
+                        Get Started
+                    </a>
+                    <a href="#documentation"
+                       class="inline-flex justify-center items-center px-6 py-3 border border-gray-700 text-base font-medium rounded-md text-gray-200 hover:bg-gray-800 md:text-lg">
+                        Documentation
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2">
+                <div class="code-window">
+                    <div class="code-header">
+                        <div class="flex">
+                            <div class="code-dot bg-red-500"></div>
+                            <div class="code-dot bg-yellow-500"></div>
+                            <div class="code-dot bg-green-500"></div>
+                        </div>
+                        <span class="text-gray-400 text-sm">terminal</span>
+                    </div>
+                    <div class="code-body">
+                        <span class="syntax-comment"># Install globally</span><br>
+                        $ npm install -g @reactstream/cli<br><br>
+                        <span class="syntax-comment"># Analyze your component</span><br>
+                        $ reactstream analyze MyComponent.js<br><br>
+                        <span class="text-green-400">✓ Syntax valid</span><br>
+                        <span class="text-green-400">✓ No linting issues</span><br><br>
+                        <span class="text-blue-400">Imports Analysis:</span><br>
+                        <span class="text-gray-300">   • react: React, useState, useEffect</span><br><br>
+                        <span class="text-blue-400">Hooks Usage:</span><br>
+                        <span class="text-gray-300">   • useState (line 5)</span><br>
+                        <span class="text-gray-300">   • useEffect (line 12)</span><br><br>
+                        <span class="syntax-comment"># Test your component</span><br>
+                        $ reactstream serve MyComponent.js --port=3000
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="py-20 md:py-32 reactstream-code">
+    <div class="container mx-auto px-4">
+
+        <h2 class="text-2xl font-bold mb-4">React Component Example</h2>
+        <p class="text-black-300 mb-6">
+            This example demonstrates a simple React functional component with hooks, state management,
+            and conditional rendering - the kind of component ReactStream helps you analyze and debug.
+        </p>
+
+
+        <div class="code-window mt-4">
+            <div class="code-header">
+                <div class="flex">
+                    <div class="code-dot bg-red-500"></div>
+                    <div class="code-dot bg-yellow-500"></div>
+                    <div class="code-dot bg-green-500"></div>
+                </div>
+                <span class="text-gray-400 text-sm">MyComponent.js</span>
+            </div>
+            <div class="code-body reactstream-code">
+                <span class="syntax-keyword">import</span> React, { useState } <span class="syntax-keyword">from</span>
+                <span class="syntax-string">'react'</span>;<br><br>
+
+                <span class="syntax-keyword">const</span> <span class="syntax-function">MyComponent</span> = () => {<br>
+                &nbsp;&nbsp;<span class="syntax-keyword">const</span> [count, setCount] = useState(<span
+                    class="syntax-number">0</span>);<br>
+                &nbsp;&nbsp;<span class="syntax-keyword">const</span> [isVisible, setIsVisible] = useState(<span
+                    class="syntax-boolean">true</span>);<br><br>
+
+                &nbsp;&nbsp;<span class="syntax-keyword">const</span> <span
+                    class="syntax-function">handleIncrement</span> = () => {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;setCount(prevCount => prevCount + <span class="syntax-number">1</span>);<br>
+                &nbsp;&nbsp;};<br><br>
+
+                &nbsp;&nbsp;<span class="syntax-keyword">const</span> <span
+                    class="syntax-function">toggleVisibility</span> = () => {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;setIsVisible(prev => !prev);<br>
+                &nbsp;&nbsp;};<br><br>
+
+                &nbsp;&nbsp;<span class="syntax-keyword">return</span> (<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="syntax-tag">&lt;div</span> <span
+                    class="syntax-attr">className</span>=<span class="syntax-string">"my-component"</span><span
+                    class="syntax-tag">&gt;</span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="syntax-tag">&lt;h2&gt;</span>My Example Component<span
+                    class="syntax-tag">&lt;/h2&gt;</span><br><br>
+
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{isVisible && (<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="syntax-tag">&lt;div</span> <span
+                    class="syntax-attr">className</span>=<span class="syntax-string">"counter-section"</span><span
+                    class="syntax-tag">&gt;</span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="syntax-tag">&lt;p&gt;</span>Count:
+                {count}<span class="syntax-tag">&lt;/p&gt;</span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="syntax-tag">&lt;button</span>
+                <span class="syntax-attr">onClick</span>={handleIncrement}<span class="syntax-tag">&gt;</span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Increment<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                    class="syntax-tag">&lt;/button&gt;</span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="syntax-tag">&lt;/div&gt;</span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)}<br><br>
+
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="syntax-tag">&lt;button</span> <span
+                    class="syntax-attr">onClick</span>={toggleVisibility}<span class="syntax-tag">&gt;</span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{isVisible ? <span class="syntax-string">'Hide'</span> :
+                <span class="syntax-string">'Show'</span>} Counter<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="syntax-tag">&lt;/button&gt;</span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="syntax-tag">&lt;/div&gt;</span><br>
+                &nbsp;&nbsp;);<br>
+                };<br><br>
+
+                <span class="syntax-keyword">export</span> <span class="syntax-keyword">default</span> MyComponent;
+            </div>
+        </div>
+
+        <div class="code-terminal mt-4">
+
+            <div class="text-center">
+                <h2 class="text-2xl font-bold mb-4">Start in console</h2>
+                <img src="img/serve-console.png" alt="ReactStream Logo" class="w-auto mr-4">
+            </div>
+        </div>
+
+        <div class="code-browser mt-4">
+            <p></p>
+            <div class="text-center">
+                <h2 class="text-2xl font-bold mb-4">and ... go to browser <a class="underline-dash"
+                                                                             href="http://localhost:3000/">http://localhost:3000/</a>
+                </h2>
+                <img src="img/serve-browser.png" alt="ReactStream Logo" class="w-auto mr-4">
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<img src="img/logo-reactstream1.svg" alt="ReactStream Logo" class="w-auto mr-4">
+<p></p>
+<!-- Include other sections as separate components -->
+<div id="features-container"></div>
+<div id="how-it-works-container"></div>
+<div id="documentation-container"></div>
+<!--<div id="examples-container"></div>-->
+<!--<div id="download-container"></div>-->
+<!--<div id="testimonials-container"></div>-->
+<!--<div id="faq-container"></div>-->
+<!--<div id="footer-container"></div>-->
+
+<!-- Include JavaScript -->
+<script src="js/main.js"></script>
+<script src="js/components.js"></script>
+</body>
+</html>
