@@ -1,0 +1,34 @@
+{
+  "name": "reactstream-website",
+  "version": "1.0.0",
+  "description": "Official website for the ReactStream CLI tool",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server -o",
+    "deploy": "npm run lint && npm run build",
+    "lint": "npx htmlhint *.html components/*.html",
+    "build": "echo \"No build step required. Static site ready for deployment.\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reactstream/website.git"
+  },
+  "keywords": [
+    "react",
+    "cli",
+    "reactstream",
+    "component",
+    "development",
+    "website"
+  ],
+  "author": "ReactStream Team",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/reactstream/website/issues"
+  },
+  "homepage": "https://github.com/reactstream/website#readme",
+  "devDependencies": {
+    "htmlhint": "^1.1.4",
+    "http-server": "^14.1.1"
+  }
+}
